@@ -59,3 +59,38 @@
     - 📁 **xml** → Contiene preferencias de usuario y datos más complejos.
     - 📁 **raw**  → Contiene archivos como vídeos o audios.
 
+## 📚 Módulo 3. Creando una UI
+
+- ### Clase 4. La vista de diseño en Android Studio
+
+  #### Referenciar a un Activity en el código de la App
+
+  ````kotlin
+  setContentView(R.layout.activity_main)
+  ````
+
+  **R** → es una Clase autogenerada que hace referencia a los recursos (📁 res) de la app. Usando esta Clase se puede acceder a los recursos dentro del package res
+
+  **layout** → package layout
+
+  **activity_main** → Nombre del archivo xml que define el Activity
+
+  #### Referenciar a un atributo en el código de la App
+
+  ````kotlin
+  R.color.red
+  ````
+
+  **🛈 Nota:** Cuando se compila la App, cada archivo de diseño XML se compila en un recurso ``View``. Los recursos de diseño se deben cargar en el código de la App en la implementación de ``Activity.onCreate()``. Para ello se llama a ``setContentView()`` pasando la referencia al recurso de diseño con la sintaxis ``R.layout.nombre_archivo``. **Ejemplo:**
+
+  ````kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+      super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+  }
+  ````
+  
+  
+  
+  
+
