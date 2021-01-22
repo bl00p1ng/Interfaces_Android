@@ -150,10 +150,28 @@
           
       </LinearLayout>
       ````
+
+- ### Clase 7.  Atributos importantes: alto, ancho y id
+
+  ````xml
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  ````
+
+  Estos atributos son obligatorios, permiten definir como un elemento se va distribuir con respecto a su contenido. Pueden recibir por valores:
+
+  - ``wrap_content`` → Hace que el elemento crezca tanto como el contenido que tenga.
+  - ``match_parent`` → Hace que un elemento ocupe toda la pantalla.
+
+  **🛈 Nota:** para agregar colores se usa la sintaxis ``@color/red``. Esto trae el color que se le especifique de entre los que están definidos en los recursos de la App. **Ejemplo;**
+
+  ````xml
+  android:background="@color/purple_200"
+  ````
+
   
-      
-  
-      
+
+
 
 
 
