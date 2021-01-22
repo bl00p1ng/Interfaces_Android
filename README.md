@@ -59,7 +59,13 @@
     - 📁 **xml** → Contiene preferencias de usuario y datos más complejos.
     - 📁 **raw**  → Contiene archivos como vídeos o audios.
 
+<<<<<<< HEAD
 - ### Clase 3. Enlazando nuestro layout con el código
+=======
+## 📚 Módulo 3. Creando una UI
+
+- ### Clase 4. La vista de diseño en Android Studio
+>>>>>>> 8cc12504278fcdbafaf57321d1b62d69942cc452
 
   #### Referenciar a un Activity en el código de la App
 
