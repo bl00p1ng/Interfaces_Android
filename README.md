@@ -38,7 +38,7 @@
 
 ## 📚 Módulo 2. Revisando los archivos para una UI
 
-- ### Clase 3. Enlazando nuestro layout con el código
+- ### Clase ?. Estructura de Archivos
 
   **Package Name:** el identificador único que tendrá la App en Play Store. Lo recomendable es tener dominio de un sitio web del que uno sea dueño seguido del nombre de la App, por ejemplo ``com.misitioweb.nombreapp``
 
@@ -58,4 +58,43 @@
     - 📁 **animations** → Al,acena XML para las animaciones
     - 📁 **xml** → Contiene preferencias de usuario y datos más complejos.
     - 📁 **raw**  → Contiene archivos como vídeos o audios.
+
+- ### Clase 3. Enlazando nuestro layout con el código
+
+  #### Referenciar a un Activity en el código de la App
+
+  ````kotlin
+  setContentView(R.layout.activity_main)
+  ````
+
+  **R** → es una Clase autogenerada que hace referencia a los recursos (📁 res) de la app. Usando esta Clase se puede acceder a los recursos dentro del package res
+
+  **layout** → package layout
+
+  **activity_main** → Nombre del archivo xml que define el Activity
+
+  #### Referenciar a un atributo en el código de la App
+
+  ````kotlin
+  R.color.red
+  ````
+
+  **🛈 Nota:** Cuando se compila la App, cada archivo de diseño XML se compila en un recurso ``View``. Los recursos de diseño se deben cargar en el código de la App en la implementación de ``Activity.onCreate()``. Para ello se llama a ``setContentView()`` pasando la referencia al recurso de diseño con la sintaxis ``R.layout.nombre_archivo``. **Ejemplo:**
+
+  ````kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+      super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+  }
+  ````
+
+## 📚 Módulo 3. Creando una UI
+
+- ### Clase 4. La vista de diseño en Android Studio
+
+  **Palette:** elementos que se pueden agregar al Layout y que ya están incluidos en Android
+
+  **Blueprint:** muestra los elementos en su forma "abstracta" como pequeñas cajas conectadas entre si
+
+  **Component Tree:** muestra la anidación de cada uno de los elementos con respecto a las vistas que tenga por dentro.
 
