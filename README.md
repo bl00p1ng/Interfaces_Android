@@ -59,40 +59,34 @@
     - 📁 **xml** → Contiene preferencias de usuario y datos más complejos.
     - 📁 **raw**  → Contiene archivos como vídeos o audios.
 
-<<<<<<< HEAD
 - ### Clase 3. Enlazando nuestro layout con el código
-=======
-## 📚 Módulo 3. Creando una UI
 
-- ### Clase 4. La vista de diseño en Android Studio
->>>>>>> 8cc12504278fcdbafaf57321d1b62d69942cc452
+    #### Referenciar a un Activity en el código de la App
 
-  #### Referenciar a un Activity en el código de la App
+      ````kotlin
+      setContentView(R.layout.activity_main)
+      ````
 
-  ````kotlin
-  setContentView(R.layout.activity_main)
-  ````
+      **R** → es una Clase autogenerada que hace referencia a los recursos (📁 res) de la app. Usando esta Clase se puede acceder a los recursos dentro del package res
 
-  **R** → es una Clase autogenerada que hace referencia a los recursos (📁 res) de la app. Usando esta Clase se puede acceder a los recursos dentro del package res
+      **layout** → package layout
 
-  **layout** → package layout
+      **activity_main** → Nombre del archivo xml que define el Activity
 
-  **activity_main** → Nombre del archivo xml que define el Activity
+    	#### Referenciar a un atributo en el código de la App
 
-  #### Referenciar a un atributo en el código de la App
+      ````kotlin
+      R.color.red
+      ````
 
-  ````kotlin
-  R.color.red
-  ````
+      **🛈 Nota:** Cuando se compila la App, cada archivo de diseño XML se compila en un recurso ``View``. Los recursos de diseño se deben cargar en el código de la App en la implementación de ``Activity.onCreate()``. Para ello se llama a ``setContentView()`` pasando la referencia al recurso de diseño con la sintaxis ``R.layout.nombre_archivo``. **Ejemplo:**
 
-  **🛈 Nota:** Cuando se compila la App, cada archivo de diseño XML se compila en un recurso ``View``. Los recursos de diseño se deben cargar en el código de la App en la implementación de ``Activity.onCreate()``. Para ello se llama a ``setContentView()`` pasando la referencia al recurso de diseño con la sintaxis ``R.layout.nombre_archivo``. **Ejemplo:**
-
-  ````kotlin
-override fun onCreate(savedInstanceState: Bundle?) {
-      super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
-  }
-  ````
+      ````kotlin
+        override fun onCreate(savedInstanceState: Bundle?) {
+          super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+      }
+      ````
 
 ## 📚 Módulo 3. Creando una UI
 
@@ -103,4 +97,63 @@ override fun onCreate(savedInstanceState: Bundle?) {
   **Blueprint:** muestra los elementos en su forma "abstracta" como pequeñas cajas conectadas entre si
 
   **Component Tree:** muestra la anidación de cada uno de los elementos con respecto a las vistas que tenga por dentro.
+  
+  
+
+## 📚 Módulo 4. Widgets y Vistas
+
+- ### Clase 6. ViewGroup y View: Diferencias básicas
+
+  - #### View
+
+      Es un elemento individual que se va a mostrar por pantalla. Por lo generar estos tags se cierran en la misma línea en la que se definen. 
+
+      ````xml
+      <TextView />
+      <ImageView />
+      <EditText />
+      ````
+
+  - #### ViewGroup
+  
+      Agrupa vistas relacionadas entre si. Cuando se tiene elementos dentro de este los cambios que se hagan a un ViewGroup afectarán también a los elementos que lo contienen.
+  
+      ````xml
+      <LinealLayout android:gravity="start"> <!-- ViewGroup -->
+      	<TextView />
+          <ImageView />
+          <EditText />
+      </LinealLayout>
+      ````
+  
+      En el ejemplo anterior el atributo ``gravity`` aplicado al ViewGroup ``<LinealLayout>`` afectará también a los Views que están en su interior.
+  
+      **🛈 Nota:** pueden haber tantos ViewGroups anidados como sea necesario, no hay una limitación al respecto. **Ejemplo:**
+  
+      ````xml
+      <?xml version="1.0" encoding="utf-8"?>
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+          android:orientation="vertical" android:layout_width="match_parent"    
+          android:layout_height="match_parent"
+          android:gravity="end|bottom"> 
+          <!-- gravity afectará a los elementos del ViewGroup. "end|bottom" → Permite poner varios valores -->
+          
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Hola Mundo!" />
+      
+          <EditText
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:autofillHints="Hi" />
+          
+      </LinearLayout>
+      ````
+  
+      
+  
+      
+
+
 
