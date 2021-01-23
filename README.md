@@ -169,7 +169,37 @@
   android:background="@color/purple_200"
   ````
 
-  
+- ### Clase 8.  Otros atributos y el namespace tools
+
+  Hay un atributo muy importante dentro de las vistas es el *id*:
+
+  ````xml
+  android:id="@+id/nombreID"
+  ````
+
+  **🛈 Nota:** como id se pueden poner las iniciales del elemento en cuestión, un contexto sobre sobre el layout y que representa dicho elemento. **Por ejemplo:** para un ``<TextView>`` en el Activity main que representa un título el id sería:
+
+  ````xml
+  android:id="@+id/tvMainTitle"
+  ````
+
+  Para referirse a este elemento en el código de la app se usaría la siguiente sintaxis:
+
+  ````kotlin
+  R.id.tvMainTitle
+  ````
+
+  **🛈 Nota:** se pueden referenciar imágenes en el xml de un Activity usando ``@mipmap/nombreImg`` o ``@drawable/nombreImg``
+
+  #### Namespace tools
+
+  Permite ver cambios en la Interfaz en tiempo de diseño sin generar una versión final de la App con dichos cambios. **Ejemplo:**
+
+  ````xml
+  tools:text="Hello World!"
+  ````
+
+  Esto es mu útil para ver cómo quedará la estructura final de la App pero sin usar los valores finales.
 
 
 
