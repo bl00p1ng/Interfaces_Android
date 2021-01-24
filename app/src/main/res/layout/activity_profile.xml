@@ -3,25 +3,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="center"
+    android:gravity="start"
+    android:background="@android:color/white"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvProfileTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_200"
-        tools:text="Hola Mundo!" />
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/description_logo" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:hint="Escribe tu nombre" />
-
-    <Button
-        android:id="@+id/button"
+        android:layout_margin="10dp"
+        android:drawablePadding="12dp"
+        android:drawableStart="@drawable/vector_person"
+        android:hint="@string/hint_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Login" />
+        android:autofillHints="username"
+        android:inputType="text" />
+
+    <EditText
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="password"
+        android:drawableStart="@drawable/vector_password"
+        android:drawablePadding="12dp"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/button_login" />
+
 
 </LinearLayout>

@@ -201,6 +201,63 @@
 
   Esto es mu útil para ver cómo quedará la estructura final de la App pero sin usar los valores finales.
 
+## 📚 Módulo 5. Layouts base
+
+- ### Clase  9. LinearLayout: Organizacion lineal
+
+  Es el layout más común para alinear los elementos en pantalla. A este layout hay que agregarle el atributo ``orientation="vertical"`` ó ``orientation="horizontal"`` 
+
+  #### Orientation vertical
+
+  ![Orientation vertical](https://i.ibb.co/xmk7LfP/orientation-vertical.jpg)
+
+  Los elementos se posicionan uno debajo del otro ocupando el espacio que les corresponde en pantalla.
+
+  #### Orientation horizontal
+
+  ![Orientation horizontal](https://i.ibb.co/92Kcc3n/orientation-horizontal.jpg)
+
+  Los elementos se posicionan uno al lado del otro de izquierda a derecha, con la excepción de los países en los que se lee de derecha a izquierda pues en esos países se invierte el orden en el que se muestran los elementos.
+
+  También es posible tener ``LinearLayout`` con diferentes orientaciones anidados:
+
+  ![LinearLayout Anidados](https://i.ibb.co/zQx8mPQ/linear-Layout-anidados.jpg)
+
+  #### Agregar imágenes a un Layout
+  
+  ````xml
+  <ImageView
+          android:layout_width="140dp"
+          android:layout_height="wrap_content"
+          android:src="@drawable/logo" />
+  ````
+  
+  **dp:** *density points* es una medida que se basa en la densidad de pixeles de la pantalla. Esta medida le permite a Android decidir como se va a mostrar un elemento o estirar las imágenes en base a la densidad de pixeles.
+  
+  **🛈 Nota:** Android tiene algunos colores predefinidos para evitar tener que definir todo desde cero. Estos se acceden con la sintaxis ``@android:color/nombreColor``. **Ejemplo:**
+  
+  ````xml
+  android:background="@android:color/white"
+  ````
+  
+  
+  
+  ``android:layout_gravity="start"`` → La gravedad afecta sólo al elemento que tiene este atributo y no a todo el ViewGroup como ocurre con ``gravity``.
+  
+  **🛈 Nota:** aparte de las imágenes Android también permite definir vectores en archivos XML. Para ello hay que hacer click en *file* > *New* > *Vector Asset*. 
+  
+  Android incluye algunos vectores ya definidos, estos se pueden ver en *Clip art*.
+  
+  Para agregar uno de estos iconos a un elemento, por ejemplo un ``<EditText>`` se usa la siguiente sintaxis:
+  
+  ````xml
+  android:drawableStart="@drawable/vector_person"
+  ````
+  
+  
+  
+  ``android:layout_weight="1`` → Establece la prioridad de un elemento cuando se construya el layout.
+
 
 
 
