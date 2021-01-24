@@ -257,6 +257,40 @@
   
   
   ``android:layout_weight="1`` → Establece la prioridad de un elemento cuando se construya el layout.
+  
+- ### Clase 10. RelativeLayout: organizando con referencias
+
+  RelativeLayout permite crear interfaces con diseños más complejos con elementos situados en diferentes posiciones, en lugar de sólo tener un elemento después de otro como ocurre con ``<LinearLayout>``.
+
+  Este tipo de layout hace posible crear interfaces como esta:
+
+  ![RelativeLayout](https://i.ibb.co/Gn329sh/relative-layout.jpg)
+
+  RelativeLayout se basa en referencias, cada elemento indica en donde se va a ubicar con respecto a su elemento padre.
+
+  #### Atributos de RelativeLayout
+
+  - ``layout_alignParentStart="true"``
+
+    ![alignParentStart](https://i.ibb.co/r5y7WJd/align-Parent-Start.jpg)
+
+  - ``layout_alignParentTop="true"``
+
+    ![alignParentTop](https://i.ibb.co/ydw9XXF/align-Parent-Top.jpg)
+
+  - ``layout_alignParentEnd="true"``
+  
+    ![alignParentEnd](https://i.ibb.co/kBYgCkV/align-Parent-End.jpg)
+  
+  - ``layout_below="@id/B" → Alinea un elementos con respecto a otro, este último se especifica mediante un id.
+  
+    ![layout_below](https://i.ibb.co/McnJP27/layout-below.jpg)
+  
+  - ``layout_alignParentBottom="true"`` → Alinea el elemento en la parte inferior del elemento padre. ``layout_alignParentStart="true"`` → Como el elemento no tiene un tamaño fijo, este atributo hace que el elemento se estire hasta el borde de la pantalla
+  
+    ![alignParentBottom](https://i.ibb.co/N6NM7Vm/align-Parent-Bottom.jpg)
+  
+    
 
 
 
