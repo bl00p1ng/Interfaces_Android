@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:gravity="start"
-    android:background="@android:color/white"
-    android:orientation="vertical">
+    android:background="@android:color/white" >
 
+    <!-- LOGO -->
     <ImageView
+        android:id="@+id/ivProfileLogo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_width="160dp"
         android:layout_height="120dp"
-        android:layout_gravity="center"
         android:src="@drawable/logo"
         android:contentDescription="@string/description_logo" />
 
+    <!-- USER FIELD -->
     <EditText
+        android:id="@+id/edProfileUsername"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/ivProfileLogo"
         android:layout_margin="10dp"
         android:drawablePadding="12dp"
         android:drawableStart="@drawable/vector_person"
@@ -24,7 +31,11 @@
         android:autofillHints="username"
         android:inputType="text" />
 
+    <!-- PASSWORD FIELD -->
     <EditText
+        android:layout_below="@+id/edProfileUsername"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,19 +45,16 @@
         android:hint="@string/hint_password"
         android:inputType="textPassword" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
+    <!-- LOGIN BUTTON -->
     <Button
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:width="0dp"
+        android:layout_margin="12dp"
         android:background="@color/colorPrimary"
         android:backgroundTint="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/button_login" />
-
-
-</LinearLayout>
+</RelativeLayout>

@@ -290,7 +290,16 @@
   
     ![alignParentBottom](https://i.ibb.co/N6NM7Vm/align-Parent-Bottom.jpg)
   
-    
+
+- ### Clase 11. RelativeLayout: Uso práctico
+
+  Una ventaja de RelativeLayout es que en este se pueden crear interfaces usando menos ViewGroups, lo cuál hace el árbol jerárquico menos pesado.
+
+  ``android:layout_centerInParent="true"`` → Centra un elemento de forma horizontal y vertical.
+
+  **🛈 Nota:** es una buena práctica en layouts que se quiere abarcar todo el espacio de pantalla, indicar un width de 0dp y usar ``alignParentStart`` y ``alignParentEnd`` para que el elemento ocupe todo el espacio disponible sin importar el espacio de la pantalla.
+
+  
 
 
 
