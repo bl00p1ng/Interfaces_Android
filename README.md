@@ -343,6 +343,48 @@
 
   Una ventaja de este tipo de layout es que si ocurre un cambio en la pantalla, como por ejemplo que se quite un elemento, el elemento de abajo se va a alinear con respecto a los constraints que tenia el elemento previo, permitiendo así crear interfaces dinámicas.
 
+## 📚 Módulo 6. Estilos y temas
+
+- ### Clase 15. ¿Qué es un estilo?
+
+  Un estilo permite especificar el diseño visual de una aplicación de manera de que los estilos puedan ser reutilizados por diferentes elementos.
+
+  #### Agregar estilos a una aplicación.
+
+  El archivo con los estilos se encuentra en *Android* > *app* > *res* > *values* > *styles.xml*
+
+  Para crear un estilo se usa el tag ``<style>`` y se le asigna un nombre. 
+
+  ````xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <resources>
+      <!-- Base application theme. -->
+      <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+          <!-- Customize your theme here. -->
+          <item name="colorPrimary">@color/colorPrimary</item>
+          <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+          <item name="colorAccent">@color/colorAccent</item>
+      </style>
+  
+      <style name="AppTheme.EditTextStyle" parent="AppTheme">
+          <item name="android:textSize">16sp</item>
+      </style>
+  </resources>
+  ````
+
+  
+
+  Lo normal al usar estilos es crear primero tomar las características más comunes y ponerlas en un estilo **padre** y luego crear estilos **hijo** para las características especificas, algo similar a lo que ocurre con la herencia en POO.
+
+  #### Aplicar estilos a una aplicación
+
+  ````xml
+  <EditText
+  	style="@style/AppTheme.EditTextStyle" />
+  ````
+
+  
+
 
 
 
