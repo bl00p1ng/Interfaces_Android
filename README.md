@@ -447,9 +447,103 @@
       app:civ_border_color="#FF000000"/>
   ````
 
-  
+- ### Clase 19.  Reutilizando elementos
 
-  
+  En ocasiones hay elementos de layout que se repiten en muchas vistas o en su defecto en todas. En Android es posible reutilizar estos elementos, para ello hay que hacer lo siguiente:
+
+  1. Poner el elemento que se repite dentro de un nuevo Activity.
+
+     **Ejemplo:**
+
+     ````xml
+     <?xml version="1.0" encoding="utf-8"?>
+     <androidx.constraintlayout.widget.ConstraintLayout
+         xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+         xmlns:app="http://schemas.android.com/apk/res-auto"
+         android:layout_height="match_parent">
+     
+         <ImageView
+             android:layout_width="@dimen/width_logo"
+             android:layout_height="@dimen/height_logo"
+             android:contentDescription="@string/description_logo"
+             android:src="@drawable/logo"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+     
+     </androidx.constraintlayout.widget.ConstraintLayout>
+     ````
+
+  2. Añadir ese archivo al layout en el que se quiere usar. **Ejemplo:**
+
+     ````xml
+     <include layout="@layout/include_logo" />
+     ````
+
+  3. Agregar los atributos necesarios para posicionar el elemento de la manera deseada. **Ejemplo:**
+
+     ````xml
+     <include
+             android:id="@+id/ivProfileLogo"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             layout="@layout/include_logo" />
+     ````
+
+  Usar este método tiene un problema y es que cuando Android resuelva el layout va  a tener en este caso un ConstraintLayout que tiene adentro otro ConstraintLayout, lo cuál cusa una anidación de layouts donde no es necesario y una consecuente perdida innecesaria de rendimiento.
+
+  Hay una de solucionar esto e incluir un layout dentro de otro sin que se genere una anidación, para conseguir eso hay que hacer lo siguiente:
+
+  1. Poner el elemento que se repite dentro de un nuevo Activity. Este Activity usará un ViewGroup ``<merge>``.
+
+     **Ejemplo:**
+
+     ````xml
+     <?xml version="1.0" encoding="utf-8"?>
+     <merge
+         xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+         xmlns:app="http://schemas.android.com/apk/res-auto"
+         android:layout_height="match_parent">
+     
+         <ImageView
+             android:id="@+id/ivProfileLogo"
+             android:layout_width="@dimen/width_logo"
+             android:layout_height="@dimen/height_logo"
+             android:contentDescription="@string/description_logo"
+             android:src="@drawable/logo" />
+     
+     </merge>
+     ````
+
+  2. Añadir ese archivo al layout en el que se quiere usar. **Ejemplo:**
+
+     ````xml
+     <include
+             android:id="@+id/ivProfileLogo"
+             layout="@layout/merge_logo"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" />
+     ````
+
+  3. Agregar los atributos necesarios para posicionar el elemento de la manera deseada. **Ejemplo:**
+
+     ````xml
+     <ImageView
+             android:id="@+id/ivProfileLogo"
+             android:layout_width="@dimen/width_logo"
+             android:layout_height="@dimen/height_logo"
+             android:contentDescription="@string/description_logo"
+             android:src="@drawable/logo"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+     ````
+
+     
+
+     
+
+
 
 
 
