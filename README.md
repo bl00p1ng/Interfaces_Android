@@ -1,5 +1,3 @@
-# Curso Básico de Diseño de Interfaces con Android Studio
-
 ## 📚 Módulo 1. Introducción
 
 - ### Clase 1. UI en Android: ¿Por qué? ¿Cómo?
@@ -424,7 +422,34 @@
 
   ![Resource Naming Cheatsheet](https://i.ibb.co/wQNh4Pc/resourcenaming-cheatsheet.png)
 
+## 📚 Módulo 7. Extendiendo los widgets
 
+- ### Clase 18. Agregando widgets externos
+
+  Se pueden agregar elementos externos a una App para poder crear interfaces más complejas y con elementos más vistosos.
+
+  Para agregar widgets externos lo primero que hay que hacer es importar el widget en el archivo ``build.gradle(Module: ...)``. **Ejemplo:**
+
+  ````groovy
+  implementation 'de.hdodenhof:circleimageview:3.1.0'
+  ````
+
+  Luego se agrega elemento al XML de un activity:
+
+  ````xml
+  <de.hdodenhof.circleimageview.CircleImageView
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:id="@+id/profile_image"
+      android:layout_width="96dp"
+      android:layout_height="96dp"
+      android:src="@drawable/profile"
+      app:civ_border_width="2dp"
+      app:civ_border_color="#FF000000"/>
+  ````
+
+  
+
+  
 
 
 
