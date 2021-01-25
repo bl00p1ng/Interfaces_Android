@@ -313,7 +313,35 @@
 
   Por  ejemplo si se va poner altura a un appBar, en lugar de poner 60, lo mejor es poner 64, o si se pone una altura para un imageview en lugar de poner 20lo ideal es poner 16 o 24. Es por esta razón que Android Studio autogenera medidas normalmente en múltiplos de 8 como 8dp, 16dp, 24dp, etc.
 
+- ### Clase 14. Layouts externos: ConstraintLayout
 
+  Es un layout externo similar a RelativeLayout con la excepción de que en ConstraintLayout los elementos reaccionan a las modificaciones que ocurran en la pantalla. Es un Layout muy usado, tanto que es cuando se crea una nueva Activity es el tipo de Layout por default, de hecho ya se encuentra agregado por defecto en las dependencias.
+
+  ConstraintLayout tiene algunas ventajas como:
+
+  - Facilita el hacer animaciones
+
+  - Permite agregar elementos más dinámicos que reaccionen a cambios en el ancho de la pantalla, etc.
+  - Es más flexible que otros tipo de layouts pues permite establecer relaciones entre todos los elementos y la propia vista padre.
+  - Mejora el uso de la memoria al evitar usar layouts anidados para generar interfaces complejas
+
+  ConstraintLayout usa un namespace llamado ``app`` para estructurar la pantalla.
+
+  Cada uno de los círculos de la imagen representan los puntos sobre los que se puede alinear cada elemento. Dichos puntos son *start*, *end*, *top*, *bottom*.
+
+  ![Puntos sobre los que se puede alinear un constraint layout](https://i.ibb.co/1qkbQkX/constraint-layout.jpg)
+
+  **Ejemplo:**
+
+  ````xml
+  app:layout_constraintTop_toTopOf="parent" <!-- Alinea el Top del elemento conel Top del padre -->
+  ````
+
+  **🛈 Nota:** todos los elementos de un ConstraintLayout deben tener por lo menos una alineación horizontal y vertical.
+
+  **🛈 Nota:** ``Ctrl + L`` → Organiza los atributos del XML
+
+  Una ventaja de este tipo de layout es que si ocurre un cambio en la pantalla, como por ejemplo que se quite un elemento, el elemento de abajo se va a alinear con respecto a los constraints que tenia el elemento previo, permitiendo así crear interfaces dinámicas.
 
 
 
