@@ -298,15 +298,22 @@
 
   **🛈 Nota:** es una buena práctica en layouts que se quiere abarcar todo el espacio de pantalla, indicar un width de 0dp y usar ``alignParentStart`` y ``alignParentEnd`` para que el elemento ocupe todo el espacio disponible sin importar el espacio de la pantalla.
 
-- ### Clase 12. FrameLayout: Alineación por region
+- ### Clase 12. FrameLayout: Alineación por región
 
   Permite crear layouts que ocupen determinado lugar de la pantalla, en lugar de ocuparla toda como ocurre con los tipos anteriores de Layout. FrameLayout va a crecer tanto como se le indique. En un FrameLayout el ancho y el alto están dictados por el tamaño del elemento más grande que hay en su interior. 
 
   Una característica de FrameLayout es organiza los elementos uno encima de otro y además permite cargar dentro de él vistas dinámicas.
 
   **🛈 Nota:** es una buena práctica para mejorar el performance de la App que un FrameLayout sólo tenga una vista hija.
-  
-  
+
+- ### Clase 13.  FrameLayout: Uso práctico
+
+  **dp:** es una unidad de medida que usa Android para calcular el tamaño de llos elementos en pantalla. Fue creada para estandarizar una forma de medida, ya que Android tiene una gran cantidad de pantallas con  densidades de pixeles muy variadas.
+  Lo que hace Android para calcular esta medida es dividir cualquier pantalla en una cuadricula (como un cuaderno cuadriculado) donde cada cuadrado es de 8dp x 8dp,por esa razón es bueno intentar diseñar teniendo usando múltiplos de 8 (8dp.16dp, 24 dp) para las medidas de los views, paddings,  márgenes, imágenes,iconos,etc. 
+
+  Por  ejemplo si se va poner altura a un appBar, en lugar de poner 60, lo mejor es poner 64, o si se pone una altura para un imageview en lugar de poner 20lo ideal es poner 16 o 24. Es por esta razón que Android Studio autogenera medidas normalmente en múltiplos de 8 como 8dp, 16dp, 24dp, etc.
+
+
 
 
 
