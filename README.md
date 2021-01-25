@@ -383,7 +383,32 @@
   	style="@style/AppTheme.EditTextStyle" />
   ````
 
-  
+- ### Clase 16. ¿Qué es un tema?
+
+  Los **estilos** son útiles para compartir atributos entre widgets. Dichos atributos de comparten de forma individual entre cada Widget.
+
+  Los **temas** por otra parte son estilos aplicados globalmente, es decir, se van a aplicar a ViewGroups, layouts o para toda la App. Cuando se hace una modificación en un tema, dicho cambio se ve involucrado en todos los elementos implicados.
+
+  **📄 AndroidManifest.xml:** es una sección en la que se definen las pantallas que se tienen con respecto al código. Es muy común que dentro del tag ``<application>`` exista un atributo llamado ``android:theme="@style/AppTheme"`` en el que se define el tema global de la aplicación.
+
+  #### Crear un tema
+
+  ````xml
+  <!-- CUSTOM THEME -->
+  <style name="AppTheme.Red" parent="AppTheme">
+      <item name="background">#FFFF0000</item>
+  </style>
+  ````
+
+  #### Aplicar un tema en una App
+
+  ````xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:theme="@style/AppTheme.Red"></androidx.constraintlayout.widget.ConstraintLayout>
+  ````
+
+  Si bien en un tema se establecen estilos globales cada elemento individual puede sobrescribir estos estilos.
 
 
 

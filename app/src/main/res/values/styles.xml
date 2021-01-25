@@ -8,6 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- CUSTOM THEME -->
+    <style name="AppTheme.Red" parent="AppTheme">
+        <item name="background">#FFFF0000</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
     <style name="AppTheme.EditTextStyle" parent="AppTheme">
         <item name="android:textSize">16sp</item>
         <item name="android:drawablePadding">12dp</item>
