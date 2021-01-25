@@ -290,7 +290,6 @@
   
     ![alignParentBottom](https://i.ibb.co/N6NM7Vm/align-Parent-Bottom.jpg)
   
-
 - ### Clase 11. RelativeLayout: Uso práctico
 
   Una ventaja de RelativeLayout es que en este se pueden crear interfaces usando menos ViewGroups, lo cuál hace el árbol jerárquico menos pesado.
@@ -299,6 +298,14 @@
 
   **🛈 Nota:** es una buena práctica en layouts que se quiere abarcar todo el espacio de pantalla, indicar un width de 0dp y usar ``alignParentStart`` y ``alignParentEnd`` para que el elemento ocupe todo el espacio disponible sin importar el espacio de la pantalla.
 
+- ### Clase 12. FrameLayout: Alineación por region
+
+  Permite crear layouts que ocupen determinado lugar de la pantalla, en lugar de ocuparla toda como ocurre con los tipos anteriores de Layout. FrameLayout va a crecer tanto como se le indique. En un FrameLayout el ancho y el alto están dictados por el tamaño del elemento más grande que hay en su interior. 
+
+  Una característica de FrameLayout es organiza los elementos uno encima de otro y además permite cargar dentro de él vistas dinámicas.
+
+  **🛈 Nota:** es una buena práctica para mejorar el performance de la App que un FrameLayout sólo tenga una vista hija.
+  
   
 
 
