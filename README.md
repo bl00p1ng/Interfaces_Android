@@ -410,6 +410,20 @@
 
   Si bien en un tema se establecen estilos globales cada elemento individual puede sobrescribir estos estilos.
 
+- ### Clase 17. Distribuyendo nuestros valores
+
+  Es una buena práctica guardar los valores que se repiten constantemente a lo largo de la App en la carpeta de recursos para que así se tenga un mejor performance en la App.
+
+  **🛈 Nota:** los lineamientos para nombrar los valores que se guarden en res van a depender del equipo de trabajo. Si sólo una persona esta involucrada en el desarrollo  de la App lo mejor es ser consistente con la nomenclatura, por ejemplo ``tipoDeDimension_dondeSeAplica``.
+
+  #### Jerarquía de estilos en Android
+
+  1. Atributos internos de un elemento
+  2. ``<style>`` aplicado a un elemento
+  3. Tema
+
+  ![Resource Naming Cheatsheet](https://i.ibb.co/wQNh4Pc/resourcenaming-cheatsheet.png)
+
 
 
 

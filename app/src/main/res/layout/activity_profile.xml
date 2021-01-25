@@ -9,8 +9,8 @@
     <!-- LOGO -->
     <ImageView
         android:id="@+id/ivProfileLogo"
-        android:layout_width="160dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/width_logo"
+        android:layout_height="@dimen/height_logo"
         android:contentDescription="@string/description_logo"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,6 @@
         style="@style/AppTheme.EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:autofillHints="username"
         android:drawableStart="@drawable/vector_person"
         android:hint="@string/hint_user"
@@ -37,7 +36,6 @@
         style="@style/AppTheme.EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:autofillHints="password"
         android:drawableStart="@drawable/vector_password"
         android:hint="@string/hint_password"
@@ -50,8 +48,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_margin="@dimen/margin_default"
+        android:layout_marginBottom="@dimen/margin_default"
         android:background="@color/colorPrimary"
         android:backgroundTint="@color/colorPrimary"
         android:hint="@string/button_login"
